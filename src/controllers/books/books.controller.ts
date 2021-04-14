@@ -10,7 +10,7 @@ export class BooksController {
     }
 
     @Post()
-    saveBook(@Body() newBook: string): string {
+    saveBook(@Body() newBook: BookDTO): BookDTO {
         return newBook;
     }
 
