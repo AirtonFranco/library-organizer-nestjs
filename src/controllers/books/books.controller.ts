@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Patch, Post } from '@nestjs/common';
+import {BookDTO} from '../../DTO/books.dto'
 
 @Controller('books')
 export class BooksController {
