@@ -1,4 +1,4 @@
-import { IsEmpty, isNotEmpty, IsNotEmpty, IsNumber, IsPositive, IsString, MaxLength, MinLength } from "class-validator";
+import { IsNotEmpty, IsNumber, IsPositive, IsString, MaxLength, MinLength } from "class-validator";
 
 export class BookDTO {
 
@@ -8,6 +8,8 @@ export class BookDTO {
     @MaxLength(100) //Max de 100 caracteres
     readonly name: string;
 
+    @IsNotEmpty()
+    @IsString()
     readonly author: string[]
 
     @IsNotEmpty() //informando que não pode esta vazio
@@ -18,7 +20,6 @@ export class BookDTO {
 
     @IsNotEmpty()
     @IsNumber()
-    @MinLength(2)
     @IsPositive() //Não pode conter um numero negativo
     readonly releaseYear: number;
 
@@ -28,7 +29,7 @@ export class BookDTO {
     @MaxLength(100)
     readonly publisher: string;
 
-    @IsEmpty()
+    @IsNotEmpty()
     @IsNumber()
     @IsPositive()
     readonly pages: number
